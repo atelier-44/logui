@@ -1,0 +1,36 @@
+let music2 = 0
+input.onSound(DetectedSound.Loud, function () {
+    basic.showString("ok aleck")
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    pins.analogWritePin(AnalogPin.P1, 1023)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Happy)
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    pins.analogWritePin(AnalogPin.P1, 0)
+    basic.showIcon(IconNames.No)
+    basic.pause(6000)
+    basic.showIcon(IconNames.Yes)
+    basic.pause(1000)
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    pins.analogWritePin(AnalogPin.P1, 1023)
+    basic.showIcon(IconNames.StickFigure)
+    basic.pause(2000)
+    pins.analogWritePin(AnalogPin.P1, 710)
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    basic.showString("bot")
+    basic.pause(2000)
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    pins.analogWritePin(AnalogPin.P1, 1023)
+    basic.pause(2000)
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    pins.analogWritePin(AnalogPin.P1, 1023)
+    basic.pause(2000)
+})
+input.onButtonPressed(Button.A, function () {
+    music2 = 0
+})
+input.onButtonPressed(Button.B, function () {
+    music.playMelody("G F G A - F E D ", music2)
+    basic.pause(100)
+    music2 += 5
+})
